@@ -9,7 +9,7 @@ Vue.use({
     Vue.prototype.$api = axios.create({
       baseURL: 'https://api.github.com/graphql',
       headers: {
-        Authorization: 'Bearer '
+        Authorization: `Bearer ${ process.env.VUE_APP_GITHUB_TOKEN }`
       }
     })
   }
