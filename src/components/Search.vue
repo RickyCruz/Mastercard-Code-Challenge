@@ -4,7 +4,8 @@
       class="search"
       type="search"
       :placeholder="placeholder"
-      v-on:change="$emit('search', $event)"
+      v-model="search"
+      v-on:keyup.enter="searchUser"
     />
   </div>
 </template>
@@ -15,6 +16,18 @@ export default {
 
   props: {
     placeholder: String
+  },
+
+  data() {
+    return {
+      search: ''
+    }
+  },
+
+  methods: {
+    searchUser () {
+      this.$emit('search', this.search)
+    }
   }
 }
 </script>

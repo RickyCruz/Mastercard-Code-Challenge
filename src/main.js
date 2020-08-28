@@ -4,14 +4,10 @@ import axios from 'axios'
 
 Vue.config.productionTip = false
 
-Vue.use({
-  install (Vue) {
-    Vue.prototype.$api = axios.create({
-      baseURL: 'https://api.github.com/graphql',
-      headers: {
-        Authorization: `Bearer ${ process.env.VUE_APP_GITHUB_TOKEN }`
-      }
-    })
+Vue.prototype.$api = axios.create({
+  baseURL: 'https://api.github.com/graphql',
+  headers: {
+    Authorization: `Bearer ${ process.env.VUE_APP_GITHUB_TOKEN }`
   }
 })
 

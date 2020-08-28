@@ -3,7 +3,7 @@
     <header class="header">
       <div class="header-search">
         <h1>GitHub APIv4</h1>
-        <Search placeholder="GitHub username" @search="handleSearchUser"/>
+        <Search class="header-search" placeholder="GitHub username" @search="handleSearchUser"/>
       </div>
     </header>
 
@@ -75,6 +75,7 @@ export default {
       })
       .catch((error) => {
         this.loading = false
+        console.log(error)
         alert('Whoops!, something is wrong')
       })
     }
